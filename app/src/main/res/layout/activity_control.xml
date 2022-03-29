@@ -124,15 +124,25 @@
 
         <android.widget.Button
             android:background="@drawable/round_back"
-            android:id="@+id/feautre"
+            android:id="@+id/feature"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:text="feature" />
+        <android.widget.Button
+            android:background="@drawable/red_line"
+            android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
 
             android:textStyle="bold"
-            android:textColor="@color/light_blue"
-            android:text="feature" />
+            android:textColor="#FF3D00"
+            android:text="reset" />
     </LinearLayout>
 <!--
     <LinearLayout

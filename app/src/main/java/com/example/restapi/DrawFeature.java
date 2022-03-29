@@ -45,7 +45,7 @@ public class DrawFeature extends AppCompatActivity {
     double rms = 0.0;
     double peak = 0.0;
     boolean run = true;
-    String ip;
+    String iip;
     public static Thread thread2;
 
     @Override
@@ -58,7 +58,7 @@ public class DrawFeature extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        ip = intent.getStringExtra("ip");
+        iip = intent.getStringExtra("ip");
 
         mHandler = new Handler();
         mHandler2 = new Handler();
@@ -179,7 +179,7 @@ public class DrawFeature extends AppCompatActivity {
 
 
 
-        thread2 = new Thread(new getFeature());
+        thread2 = new Thread(new getFeature(iip,"feature1"));
         thread2.start();
 
     }
@@ -194,8 +194,12 @@ public class DrawFeature extends AppCompatActivity {
     private class getFeature implements Runnable {
         //private final AtomicBoolean condition = new AtomicBoolean(false);
 
-        public getFeature(){
+        private String ip;
+        private String dname;
 
+        public getFeature(String ip, String dname){
+            this.ip = ip;
+            this.dname = dname;
         }
 
 
@@ -213,7 +217,7 @@ public class DrawFeature extends AppCompatActivity {
                     Log.v("ipipip","feature : "+ip);
 
                     Thread.sleep(50);
-                    resultText = new Task().execute("http://"+ip+":50010/manage/Status/feature").get();
+                    resultText = new Task().execute("http://"+ip+":50010/manage/Device/"+dname).get();
                     Log.v("resultText",""+resultText);
                     JSONObject jsonObject = new JSONObject(resultText);
                     rms = Double.parseDouble(jsonObject.getString("RMS"));

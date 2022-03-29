@@ -50,7 +50,8 @@ public class DrawStatus extends AppCompatActivity {
     String ram_total;
     double ram_usage = 0.0;
     double ram_usage_per = 0.0;
-    String ip;
+    String iip;
+    String device_name;
     public static Thread thread2;
     int[] col = new int[]{
             Color.rgb(213,13,13), Color.rgb(162, 158, 158), Color.rgb(0,0,0),
@@ -61,13 +62,14 @@ public class DrawStatus extends AppCompatActivity {
         setContentView(R.layout.activity_status);
 
         Intent intent = getIntent();
-        ip = intent.getStringExtra("ip");
+        iip = intent.getStringExtra("ip");
+
 
         pieChart = (PieChart)findViewById(R.id.chart2);
         pieChart2 = (PieChart)findViewById(R.id.chart3);
         text_ram = (TextView)findViewById(R.id.ram);
 
-        thread2 = new Thread(new getStatus());
+        thread2 = new Thread(new getStatus(iip));
         thread2.start();
 
 
@@ -83,8 +85,9 @@ public class DrawStatus extends AppCompatActivity {
     private class getStatus implements Runnable {
         //private final AtomicBoolean condition = new AtomicBoolean(false);
 
-        public getStatus() {
-
+        private String ip;
+        public getStatus(String ip) {
+            this.ip = ip;
         }
 
 
@@ -96,7 +99,7 @@ public class DrawStatus extends AppCompatActivity {
 
             try {
                 Log.v("ipipip","status : "+ip);
-                resultText1 = new Task().execute("http://" + ip + ":50010/manage/Status/info").get();
+                resultText1 = new Task().execute("http://" + ip + ":50010/manage/Pc/info").get();
                 JSONObject jsonObject = new JSONObject(resultText1);
                 cpu = Double.parseDouble(jsonObject.getString("cpu").replace("%", ""));
                 ram_total = jsonObject.getString("ram_total").replace("MB", "");

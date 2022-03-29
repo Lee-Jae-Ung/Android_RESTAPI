@@ -93,7 +93,7 @@ public class MainListBtnAdapter extends ArrayAdapter  {
         });
 
         // button2의 TAG에 position값 지정. Adapter를 click listener로 지정.
-        Button button2 = (Button) convertView.findViewById(R.id.feautre);
+        Button button2 = (Button) convertView.findViewById(R.id.feature);
         button2.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 //Feature눌렀을때 실행되는 함수
@@ -102,6 +102,22 @@ public class MainListBtnAdapter extends ArrayAdapter  {
                 context.startActivity(intent2);
             }
         });
+
+        Button button3 = (Button) convertView.findViewById(R.id.reset);
+        button3.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+
+                //Feature눌렀을때 실행되는 함수
+                try {
+                    new Task().execute("http://" + ip + ":50010/manage/Pc/reset").get();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
         return convertView;
     }

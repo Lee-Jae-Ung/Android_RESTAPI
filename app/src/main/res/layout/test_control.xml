@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical">
+        </TextView>
+        <TableLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+
+
+            <View
+                android:background="#EEEEEE"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp">
+            </View>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="위치"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal">
+                </TextView>
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginLeft="10dp"
+                    android:text="울산시 남구 대학로">
+                </TextView>
+            </TableRow>
+            <View
+                android:background="#EEEEEE"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp">
+            </View>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IP"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal">
+                </TextView>
+                <TextView
+                    android:id="@+id/ipaddr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginLeft="10dp"
+                    android:text="203.250.77.240">
+                </TextView>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="연결"
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp">
+                </TextView>
+                <ImageView
+                    android:id="@+id/default_status"
+                    android:background="@drawable/red_circle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_gravity="center_vertical">
+                </ImageView>
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/scroll3_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fillViewport="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ListView
+                android:id="@+id/device_list_view2"
+                android:layout_width="match_parent"
+                android:dividerHeight="2dp"
+                android:divider="#CFD8DC"
+                android:layout_height="match_parent">
+
+            </ListView>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+
+<!--
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:id="@+id/devname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="40dp"
+            android:text="Device1">
+
+        </TextView>
+        <android.widget.Button
+            android:background="@drawable/round_back"
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Status" />
+
+
+        <android.widget.Button
+            android:background="@drawable/round_back"
+            android:id="@+id/feautre"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:text="feature" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:id="@+id/devname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="40dp"
+            android:text="Device2">
+
+        </TextView>
+        <android.widget.Button
+            android:background="@drawable/round_back"
+            android:id="@+id/status2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Status" />
+
+
+        <android.widget.Button
+            android:background="@drawable/round_back"
+            android:id="@+id/feautre2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:text="feature" />
+    </LinearLayout>
+!-->
+
+    <!--
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/devname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEVICE1"
+                android:layout_marginLeft="10dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="울산시 남구 대학로">
+            </TextView>
+
+            <TextView
+                android:id="@+id/ipaddr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="203.250.77.240">
+            </TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/status"
+                android:layout_width="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="Status" />
+
+            <Button
+                android:id="@+id/feautre"
+                android:layout_width="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="feature" />
+        </LinearLayout>
+    !-->
+
+
+
+
+</LinearLayout>
